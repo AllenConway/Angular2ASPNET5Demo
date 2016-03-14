@@ -1,0 +1,10 @@
+﻿<h1>{{title}}</h1>
+<div>
+    <a2-hello></a2-hello>
+</div>
+<div>Here are your post conference speakers:</div>
+<ul>
+    <li *ngFor="#speaker of speakers">
+        <a [href]="speaker.profile" target="_blank">{{speaker.name}}</a>
+    </li>
+</ul>

@@ -1,4 +1,4 @@
-﻿/// <binding AfterBuild='moveToLibs, moveIndex' />
+﻿/// <binding AfterBuild='moveToLibs, moveIndex, moveViews' />
 /*
 This file in the main entry point for defining Gulp tasks and using Gulp plugins.
 Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
@@ -7,14 +7,19 @@ Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
 var gulp = require('gulp');
 
 var paths = {
-   indexSource: "./app/",
+   appSource: "./app/",
    indexTarget: "./wwwroot/",
+   viewsTarget: "./wwwroot/app/components/",
    npmSrc: "./node_modules/",
    libTarget: "./wwwroot/libs/"
 };
 
 var appFilesToMove = [
-   paths.indexSource + 'index.html'
+   paths.appSource + 'index.html'
+];
+
+var viewsToMove = [
+   paths.appSource + 'mal.component.html'
 ];
 
 var libsToMove = [
@@ -31,4 +36,8 @@ gulp.task('moveToLibs', function () {
 
 gulp.task('moveIndex', function () {
    return gulp.src(appFilesToMove).pipe(gulp.dest(paths.indexTarget));
+});
+
+gulp.task('moveViews', function () {
+   return gulp.src(viewsToMove).pipe(gulp.dest(paths.viewsTarget));
 });

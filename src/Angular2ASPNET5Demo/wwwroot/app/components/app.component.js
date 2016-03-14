@@ -12,11 +12,15 @@ var core_1 = require('angular2/core');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "Hello MAL Las Vegas!";
+        this.speakers = [{ name: "Allen Conway", profile: "http://bit.ly/1R7VM0v" },
+            { name: "Brent Edwards", profile: "http://bit.ly/1XdIgNb" },
+            { name: "Jason Bock", profile: "http://bit.ly/1py8Vd7" },
+            { name: "Kevin Ford", profile: "http://bit.ly/1py8Tlu" }];
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>{{title}}</h1>'
+            templateUrl: 'app/components/mal.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
